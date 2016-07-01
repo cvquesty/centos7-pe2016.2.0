@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 ######################
   # Define the Master VM Characteristics
   config.vm.define 'master' do |master|
-    master.vm.box = 'puppetlabs/centos-7.0-64-nocm'
+    master.vm.box = 'puppetlabs/centos-7.2-64-nocm'
     master.vm.network :private_network, :ip => '10.10.100.100'
     master.vm.network "forwarded_port", guest: 443, host: 8443
     master.vm.hostname = 'master.puppetlabs.vm'
@@ -45,7 +45,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 ###################
   # Define the Development VM Characteristics
   config.vm.define 'development' do |development|
-    development.vm.box = 'puppetlabs/centos-7.0-64-nocm'
+    development.vm.box = 'puppetlabs/centos-7.2-64-nocm'
     development.vm.network :private_network, :ip => '10.10.100.111'
     development.vm.hostname = 'development.puppetlabs.vm'
 
@@ -76,7 +76,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 ###################
   # Define the Production VM Characteristics
   config.vm.define 'production' do |production|
-    production.vm.box = 'puppetlabs/centos-7.0-64-nocm'
+    production.vm.box = 'puppetlabs/centos-7.2-64-nocm'
     production.vm.network :private_network, :ip => '10.10.100.113'
     production.vm.hostname = 'production.puppetlabs.vm'
 
